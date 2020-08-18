@@ -33,7 +33,9 @@ router.post('/register', async (req, res) => {
     // Save user to database
     try {
         const savedUser = await user.save();
-        res.send(savedUser);
+        res.send({
+            user: user._id
+        });
     } catch (error) {
         res.status(400).send(error);
     }
