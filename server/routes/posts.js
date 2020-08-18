@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const tokenValidation = require('../validations/token_validation');
 const Post = require('../models/Post');
 
 
-router.get('/', async (req, res) => {
+router.get('/', tokenValidation,  async (req, res) => {
     try {
         const posts = await Post.find();
         res.json(posts); 
