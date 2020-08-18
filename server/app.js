@@ -4,13 +4,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv/config');
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-
 //Import routes
 const postsRoute = require('./routes/posts');
 const authRoute = require('./routes/auth')
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
 
 app.use('/posts', postsRoute);
 app.use('/user', authRoute)
