@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
 mongoose.connect(
     process.env.DB_CONNECTION, 
     { useNewUrlParser: true }, 
-    () => console.log('connected to DB!')
+    () => console.log('Connected to DB!')
 );
 
 // Listen to porst 3000.
-app.listen(3000);
+app.listen(3000, () => console.log('Server up and running!'));
