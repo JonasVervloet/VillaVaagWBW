@@ -16,18 +16,14 @@ const registerValidation = Joi.object({
 });
 
 
-const loginSchema= {
+const loginValidation = Joi.object({
     email: Joi.string()
     .email()
     .required(),
     password: Joi.string()
     .min(6)
     .required()
-}
-
-const loginValidation = data => {
-    return Joi.validate(data, loginSchema)
-}
+})
 
 module.exports.registerValidation = registerValidation;
 module.exports.loginValidation = loginValidation;
