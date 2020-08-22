@@ -28,4 +28,4 @@ mongoose.connect(
 );
 
 // Listen to porst 3000.
-app.listen(3000, () => console.log('Server up and running!'));
+app.listen(process.env.PORT, () => console.log('Server up and running!'));
